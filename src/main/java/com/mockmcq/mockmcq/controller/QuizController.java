@@ -14,6 +14,18 @@ public class QuizController {
     @Autowired
     private QuizService quizService;
 
+    @GetMapping("/")
+    public String greeting(){
+        return new String("FYI:  Start a new quiz session:\n" +
+                "POST /quiz/start?username=Anmol\n" +
+                "Random Questions:\n" +
+                "GET /quiz/question\n" +
+                "Submit Answers:\n" +
+                "POST /quiz/answer?sessionId=1&questionId=1&answer=4\n" +
+                "Track Performance:\n" +
+                " GET /quiz/status?username=Anmol");
+    }
+
     // Start a new quiz session
     @PostMapping("/start")
     public Session startQuiz(@RequestParam String username) {

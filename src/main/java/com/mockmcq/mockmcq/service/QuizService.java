@@ -21,6 +21,7 @@ public class QuizService {
     @Autowired
     private AnswerRepository userAnswerRepository;
 
+    //This creates a new session for each user
     public Session startNewSession(String username) {
         Session session = new Session();
         session.setUsername(username);
@@ -30,12 +31,12 @@ public class QuizService {
         System.out.println(session.toString());
         return quizSessionRepository.save(session);
     }
-
+    //This returns a random question from Question table.
     public Question getRandomQuestion() {
         return questionRepository.findRandom()
                 .orElseThrow(() -> new RuntimeException("No questions available"));
     }
-
+    //This submits the answer and records the response of that answer in Session table
     public void submitAnswer(Long sessionId, Long questionId, String answer) {
         Session session = quizSessionRepository.findById(sessionId)
                 .orElseThrow(() -> new RuntimeException("Session not found"));
@@ -61,7 +62,7 @@ public class QuizService {
 
         quizSessionRepository.save(session);
     }
-
+    //This returns the total details of the user by username
     public Session getSessionStatus(String username) {
         return quizSessionRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("Session not found"));
