@@ -15,7 +15,7 @@ public class QuizController {
     private QuizService quizService;
 
     @GetMapping("/")
-    public String greeting(){
+    public String greeting() {
         return new String("FYI:  Start a new quiz session:\n" +
                 "POST /quiz/start?username=Anmol\n" +
                 "Random Questions:\n" +

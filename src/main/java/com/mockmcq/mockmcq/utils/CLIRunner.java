@@ -1,7 +1,6 @@
 package com.mockmcq.mockmcq.utils;
 
 
-
 import com.mockmcq.mockmcq.entity.Question;
 import com.mockmcq.mockmcq.repository.QuestionRepository;
 import org.springframework.boot.CommandLineRunner;

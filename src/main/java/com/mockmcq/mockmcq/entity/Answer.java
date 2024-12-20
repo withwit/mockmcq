@@ -9,7 +9,6 @@ public class Answer {
     private Long id;
 
 
-
     private Long questionId;
 
     private String userAnswer;
@@ -24,6 +23,7 @@ public class Answer {
     public Long getId() {
         return id;
     }
+
     public Long getQuestionId() {
         return questionId;
     }
