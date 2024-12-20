@@ -39,7 +39,7 @@ mvn clean install
 ### 3. Run the Application
 
 ```bash
-mvn spring-boot:run
+mvn spring-boot:test-run
 ```
 
 ### 4. Access the H2 Console (Optional)
